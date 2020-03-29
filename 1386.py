@@ -23,5 +23,31 @@ class Solution:
             else:
                 variants -=2
         return variants
+
+# faster solution
+# class Solution:
+#     def maxNumberOfFamilies(self, n: int, reservedSeats: List[List[int]]) -> int:
+#         X = {}
+        
+#         for i, j in reservedSeats:
+#             if j not in {1, 10}:
+#                 if i in X:
+#                     X[i].add(j)
+                    
+#                 else:
+#                     X[i] = {j}
+#         m = (n - len(X)) * 2
+#         for x in X.values():
+#             a = not (2 in x or 3 in x)
+#             b = not (4 in x or 5 in x)
+#             c = not (6 in x or 7 in x)
+#             d = not (8 in x or 9 in x)
+            
+#             m += 2 if a and b and c and d else \
+#                  1 if a and b or b and c or c and d else \
+#                  0
+#         return m
+                        
+        
                         
         
